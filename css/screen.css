@@ -28,4 +28,24 @@
     width: 980px;
   }
 }
+@media screen and (max-width: 768px) {
+  #bsmenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+  #bsmenu ul li a {
+    white-space: nowrap;
+    background: #000;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  #sidebar_col {
+    width: auto;
+    min-height: 1px;
+  }
+  #content_col {
+    margin-left: 0;
+  }
+}
 /*# sourceMappingURL=screen.css.map */

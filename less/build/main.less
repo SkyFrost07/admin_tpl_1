@@ -23,12 +23,17 @@ a{
 #menu_bar{
     ul{list-style: none; padding-left: 0; margin-bottom: 0;}
     li{
-        position: relative;
         a{
             padding: 5px 10px; color: #fff; display: block;
+            position: relative;
         }
         i{min-width: 18px; margin-right: 3px;}
-        b{position: absolute; top: 0; right: 10px; height: 100%; padding: 8px 10px;}
+        b:after{
+            position: absolute; top: 0; right: 10px; height: 100%; padding: 5px 10px;
+            content: "\f105"; font-family: FontAwesome;
+            .transform(rotate(0deg));
+            .transi(all ease-in-out 0.3s);
+        }
     }
     li a:hover, li a:focus, li a:active, .active a{
         background: rgba(0, 0, 0, 1);
@@ -39,13 +44,34 @@ a{
             padding-left: 35px;
         }
     }
-    .sub-menu.open{
-        max-height: 340px; background: rgba(0, 0, 0, 0.9);
+    .open{
+        > a{
+            b:after{.transform(rotate(90deg));}
+        }
+        .sub-menu{
+            max-height: 340px; background: rgba(0, 0, 0, 0.9);
+        }
     }
 }
 #content_col{
-   margin-left: @sbar_w; padding: 70px 0 15px 15px; 
+   margin-left: @sbar_w; padding: 70px 10px 15px 10px; 
+}
+.toggle{
+    #sidebar_col{
+        width: @sbar_wtg;
+    }
+    #menu_bar{
+        li{
+            position: relative;
+            a{}
+            i{}
+            b, span{display: none;}
+        }
+    }
+    #content_col{
+        margin-left: @sbar_wtg;
+    }
 }
 .wrapper{
-    background: #fff; color: @main_cl; padding: 15px;
+    background: #fff; color: @main_cl; padding: 15px; margin-bottom: 20px;
 }

@@ -63,24 +63,32 @@ a:focus {
   padding-left: 0;
   margin-bottom: 0;
 }
-#menu_bar li {
-  position: relative;
-}
 #menu_bar li a {
   padding: 5px 10px;
   color: #fff;
   display: block;
+  position: relative;
 }
 #menu_bar li i {
   min-width: 18px;
   margin-right: 3px;
 }
-#menu_bar li b {
+#menu_bar li b:after {
   position: absolute;
   top: 0;
   right: 10px;
   height: 100%;
-  padding: 8px 10px;
+  padding: 5px 10px;
+  content: "\f105";
+  font-family: FontAwesome;
+  transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
 }
 #menu_bar li a:hover,
 #menu_bar li a:focus,
@@ -99,17 +107,37 @@ a:focus {
 #menu_bar .sub-menu li a {
   padding-left: 35px;
 }
-#menu_bar .sub-menu.open {
+#menu_bar .open > a b:after {
+  transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+#menu_bar .open .sub-menu {
   max-height: 340px;
   background: rgba(0, 0, 0, 0.9);
 }
 #content_col {
   margin-left: 230px;
-  padding: 70px 0 15px 15px;
+  padding: 70px 10px 15px 10px;
+}
+.toggle #sidebar_col {
+  width: 38px;
+}
+.toggle #menu_bar li {
+  position: relative;
+}
+.toggle #menu_bar li b,
+.toggle #menu_bar li span {
+  display: none;
+}
+.toggle #content_col {
+  margin-left: 38px;
 }
 .wrapper {
   background: #fff;
   color: #65777a;
   padding: 15px;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=main.css.map */
